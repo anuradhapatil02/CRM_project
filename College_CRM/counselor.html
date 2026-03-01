@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Counselor Dashboard - College CRM</title>
+<link rel="stylesheet" href="style.css">
+
+<script>
+function showSection(sectionId){
+    var sections = document.querySelectorAll(".content-section");
+    sections.forEach(function(section){
+        section.style.display = "none";
+    });
+    document.getElementById(sectionId).style.display = "block";
+}
+</script>
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<!-- ================= SIDEBAR ================= -->
+<div class="sidebar">
+<h2>👩‍💼 Counselor Panel</h2>
+<ul>
+<li><a href="#" onclick="showSection('dashboard')">Dashboard</a></li>
+<li><a href="#" onclick="showSection('addlead')">Add New Lead</a></li>
+<li><a href="#" onclick="showSection('calls')">Call Records</a></li>
+<li><a href="#" onclick="showSection('followup')">Schedule Follow-up</a></li>
+<li><a href="#" onclick="showSection('status')">Update Enquiry Status</a></li>
+<li><a href="#" onclick="showSection('performance')">My Performance</a></li>
+<li><a href="login.html">Logout</a></li>
+</ul>
+</div>
+
+<!-- ================= MAIN CONTENT ================= -->
+<div class="main-content">
+
+<!-- ================= DASHBOARD ================= -->
+<div id="dashboard" class="content-section">
+<h1>Welcome Counselor</h1>
+
+<div class="cards">
+    <div class="card stat-card">Assigned Leads <span>28</span></div>
+    <div class="card stat-card">Converted Admissions <span>12</span></div>
+    <div class="card stat-card">Pending Follow-ups <span>6</span></div>
+</div>
+</div>
+
+<!-- ================= ADD NEW LEAD ================= -->
+<div id="addlead" class="content-section" style="display:none;">
+<h1>Add New Lead</h1>
+
+<form class="crm-form">
+<input type="text" placeholder="Student Name">
+<input type="text" placeholder="Phone">
+<input type="email" placeholder="Email">
+<input type="text" placeholder="Course Interested">
+<input type="text" placeholder="Source">
+<br><br>
+<button class="submit-btn">Add Lead</button>
+</form>
+</div>
+
+<!-- ================= CALL RECORD ================= -->
+<div id="calls" class="content-section" style="display:none;">
+<h1>Add Call Record</h1>
+
+<form class="crm-form">
+<input type="text" placeholder="Enquiry ID">
+<input type="date">
+<select>
+<option>Connected</option>
+<option>Not Reachable</option>
+<option>Busy</option>
+<option>Wrong Number</option>
+</select>
+<textarea placeholder="Remarks"></textarea>
+<br><br>
+<button class="submit-btn">Save Call Record</button>
+</form>
+
+<br>
+
+<h3>Call Record List</h3>
+<table class="crm-table">
+<tr>
+<th>Enquiry ID</th>
+<th>Date</th>
+<th>Status</th>
+<th>Remarks</th>
+</tr>
+<tr>
+<td>ENQ101</td>
+<td>15-02-2026</td>
+<td>Connected</td>
+<td>Interested in BBA course</td>
+</tr>
+</table>
+</div>
+
+<!-- ================= FOLLOW UP ================= -->
+<div id="followup" class="content-section" style="display:none;">
+<h1>Schedule Follow-Up</h1>
+
+<form class="crm-form">
+<input type="text" placeholder="Enquiry ID">
+<input type="date">
+<select>
+<option>Follow-up Scheduled</option>
+<option>Completed</option>
+</select>
+<textarea placeholder="Remarks"></textarea>
+<br><br>
+<button class="submit-btn">Schedule</button>
+</form>
+
+<br>
+
+<h3>Follow-Up List</h3>
+<table class="crm-table">
+<tr>
+<th>Enquiry ID</th>
+<th>Date</th>
+<th>Status</th>
+<th>Remarks</th>
+</tr>
+<tr>
+<td>ENQ101</td>
+<td>02-03-2026</td>
+<td>Follow-up Scheduled</td>
+<td>Send brochure via WhatsApp</td>
+</tr>
+</table>
+</div>
+
+<!-- ================= UPDATE STATUS ================= -->
+<div id="status" class="content-section" style="display:none;">
+<h1>Update Enquiry Status</h1>
+
+<form class="crm-form">
+<input type="text" placeholder="Enquiry ID">
+<select>
+<option>New</option>
+<option>Called</option>
+<option>Follow-up</option>
+<option>Closed</option>
+<option>Converted</option>
+</select>
+<textarea placeholder="Comment"></textarea>
+<br><br>
+<button class="submit-btn">Update Status</button>
+</form>
+</div>
+
+<!-- ================= PERFORMANCE ================= -->
+<div id="performance" class="content-section" style="display:none;">
+<h1>My Performance Report</h1>
+
+<div class="cards">
+<div class="card stat-card">Total Calls Made <span>85</span></div>
+<div class="card stat-card">Admissions Converted <span>12</span></div>
+<div class="card stat-card">Follow-Ups Pending <span>6</span></div>
+</div>
+
+<br>
+
+<table class="crm-table">
+<tr>
+<th>Month</th>
+<th>Leads Handled</th>
+<th>Converted</th>
+<th>Performance %</th>
+</tr>
+<tr>
+<td>February 2026</td>
+<td>25</td>
+<td>11</td>
+<td>39%</td>
+</tr>
+</table>
+
+</div>
+
+</div>
+</div>
+<footer class="simple-footer">
+© 2026 College CRM System | All Rights Reserved
+</footer>
+
+</body>
+</html>
